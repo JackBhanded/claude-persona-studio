@@ -1,0 +1,21 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs and temp
+*.log
+*.tmp
+.cache/
+
+# Private launch kit (don't publish marketing notes)
+LAUNCH.md
+
+# Node (only if you later add tooling)
+node_modules/

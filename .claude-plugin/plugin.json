@@ -1,0 +1,6 @@
+{
+  "name": "claude-persona-pack",
+  "description": "A curated pack of session-scoped Claude personas. Selecting one changes Claude's voice and expertise for the current session only, never others. Always Claude inside.",
+  "version": "0.4.0",
+  "author": { "name": "Jack" }
+}

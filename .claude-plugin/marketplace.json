@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "persona-studio",
+  "owner": { "name": "Jack" },
+  "description": "Persona Studio — one-click, session-scoped Claude personas, useful and fun. Always Claude inside.",
+  "version": "0.4.0",
+  "plugins": [
+    {
+      "name": "claude-persona-pack",
+      "source": "./",
+      "description": "22 personas: technical experts (Data Scientist, Data Engineer, Security Expert, Software Engineer, UX Expert), business & strategy (CEO, Product Manager, Financial Planner, Marketer, Legal-Savvy Reviewer), knowledge & learning (Researcher, Editor, Astronomer, Patient Teacher), modes & mentors (Taskmaster, Devil's Advocate, Zen Mentor, Deductionist, Negotiation Coach), and fun (Mad Scientist plus style-of voices). Each is session-scoped and never changes Claude's core safety or honesty.",
+      "version": "0.4.0",
+      "category": "productivity",
+      "keywords": ["persona", "roleplay", "expert", "coach", "brainstorm", "fun"],
+      "author": { "name": "Jack" }
+    }
+  ]
+}
