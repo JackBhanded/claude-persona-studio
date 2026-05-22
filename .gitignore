@@ -14,8 +14,12 @@ desktop.ini
 *.tmp
 .cache/
 
-# Private launch kit (don't publish marketing notes)
+# Local-only helpers (not for the public repo)
+push-to-github.ps1
+publish.bat
+_setup-repo.ps1
 LAUNCH.md
+NOTES.md
 
 # Node (only if you later add tooling)
 node_modules/

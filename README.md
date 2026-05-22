@@ -1,6 +1,20 @@
-# Claude Persona Pack
+<div align="center">
 
-One-click, **session-scoped** personas for Claude. Pick a "hat" — a CFO-grade strategist, a security expert, a patient teacher, even a playful entertainer voice — and Claude takes it on for *that session only*. It never leaks into your other chats, and it never changes Claude's core: honesty, safety, and judgment stay exactly the same.
+<img src="assets/claude-logo.svg" width="64" alt="Claude" />
+
+# Claude Persona Studio
+
+**One-click, session-scoped personas for Claude — useful and fun.**
+
+Pick a "hat" — a CEO-grade strategist, a security expert, a patient teacher, even a playful entertainer voice — and Claude takes it on for *that session only*. It never leaks into your other chats, and it never changes Claude's core: honesty, safety, and judgment stay exactly the same.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-D97757.svg)](LICENSE)
+[![Personas: 22](https://img.shields.io/badge/personas-22-D97757.svg)](#whats-included-22-personas)
+[![Claude Code + Cowork](https://img.shields.io/badge/Claude%20Code%20%2B%20Cowork-3F8F77.svg)](#install--use)
+
+</div>
+
+---
 
 **Always Claude inside.** A persona is a costume — it changes Claude's *voice and the expertise it foregrounds*, not what Claude is willing to do.
 
@@ -44,40 +58,56 @@ The style-of voices are affectionate impressions only: no fabricated quotes, no 
 
 ---
 
-## Install (Claude Code / Cowork plugins)
+## Install & use
 
-From this folder's parent, add it as a local marketplace and install the plugin:
+Persona Studio is a Claude **plugin**, so it works in **Claude Code** and **Cowork** (which share the same plugin system). You install it **once** — it then works in *every* future session on those surfaces, no matter which folder you launch from. Plain web/desktop **chat** doesn't support plugins; see the workaround at the end.
 
-```shell
-/plugin marketplace add ./Claude-Persona-Pack
+### Step 1 — install it once (any Claude Code session)
+
+Open Claude Code anywhere (the folder you start in doesn't matter — plugins install at the user level), then run these two slash commands in the prompt:
+
+```text
+# point Claude at this pack (use the local path now, or your GitHub repo after publishing)
+/plugin marketplace add "C:\Users\Jack\Documents\Claude\Projects\Claude-Persona-Pack"
+
+# install the plugin from it
 /plugin install claude-persona-pack@persona-studio
 ```
 
-Validate first if you like:
+After publishing to GitHub, others (and you, on another machine) use the repo instead:
 
-```shell
-/plugin validate ./Claude-Persona-Pack
+```text
+/plugin marketplace add JackBhanded/claude-persona-studio
+/plugin install claude-persona-pack@persona-studio
 ```
 
-To publish for others, push this folder to a GitHub repo and have them run
-`/plugin marketplace add <owner>/<repo>` then the same install command.
+That's it — the 22 personas are now registered for all your sessions.
 
----
+### Step 2 — put a persona on (in any session)
 
-## Use a persona
+Two ways, both work in Claude Code and Cowork:
 
-Once installed, invoke a persona by name in any session, for example:
-
-```
+```text
+# explicit slash command (skills are namespaced as plugin:skill)
 /claude-persona-pack:security-expert
+
+# or just ask in plain language
+Put on the Data Scientist persona.
 ```
 
-or just ask in plain language: *"Put on the Data Scientist persona."*
+Claude stays in that persona for the rest of the session. Say **"drop the persona"** to return to default.
 
-To revert at any time, say **"drop the persona"** — Claude returns to default.
+### Which surface am I on?
 
-### The Persona Studio picker
-Cowork can render an interactive picker (persona cards with a trait "mixing board"): tap a trait off to customize a persona before launching, then one click drops it into the current session. Ask Claude to "open the Persona Studio picker."
+- **Claude Code (terminal, launched from a folder):** do Step 1 once; then Step 2 in any session. Installing does **not** tie it to that folder — it's available everywhere.
+- **Cowork:** because Cowork shares Claude's plugin config, installing once (above) makes the personas available here too. Just ask *"Put on the CEO persona"* (or open the picker, below).
+- **Plain chat (claude.ai web / desktop app conversation):** plugins can't be installed here. Workaround: open the persona's `SKILL.md` (in `skills/<name>/`), copy its body, and paste it as your first message — or save it as a Claude Project custom instruction.
+
+### The Persona Studio picker (Cowork)
+
+Cowork can render an interactive picker — persona cards with a trait "mixing board" you can toggle before launching, then one click drops the persona into the current session. Just ask Claude to **"open the Persona Studio picker."**
+
+> Tip: validate the pack before publishing with `claude plugin validate .` from this folder.
 
 ---
 
@@ -157,6 +187,38 @@ Dial **up**: <traits>. Dial **down**: <traits>.
 - **Advice domains** (legal, financial, medical) must explain options and trade-offs, avoid confident individualized recommendations, and remind the user to consult a licensed professional.
 - **Defensive only** for security-style personas — no exploits or malicious tooling.
 - Keep names kebab-case so they namespace cleanly (`/claude-persona-pack:<name>`).
+
+---
+
+## Part of a little fleet
+
+Persona Studio is one of a set of open tools for people who build with Claude:
+
+- **[Claude Meter](https://github.com/JackBhanded/claude-meter)** — live usage on your taskbar.
+- **[Claude Lifeboat](https://github.com/JackBhanded/claude-lifeboat)** — backup & restore for your Claude data.
+- **[Claude Lifejacket](https://github.com/JackBhanded/claude-lifejacket)** — keep every session aware of your projects.
+- **[Claude Compass](https://github.com/JackBhanded/claude-compass)** — keep every session attuned to *you* (your working style).
+- **[Claude Parachute](https://github.com/JackBhanded/claude-parachute)** — a safety net for the Bash changes Claude Code's `/rewind` can't see.
+- **Claude Persona Studio** — give Claude a hat for the session. *(you are here)*
+
+## About the author
+
+<table>
+<tr>
+<td width="120" valign="top">
+<img src="https://www.SawYouAtSinai.com/_layouts/images/team/jackbio.jpg" width="100" alt="Jack Bhanded">
+</td>
+<td valign="top">
+
+Built by **[Jack Bhanded](https://www.sawyouatsinai.com/jewish-dating-team.aspx)**, Lead developer and architect at [SawYouAtSinai](https://www.sawyouatsinai.com). Devotee of innovative technologies and gadgets. Built this because he kept re-typing the same "act like a senior X, be concise" setup prompt to every fresh Claude session — so he turned the good ones into one-click personas.
+
+</td>
+</tr>
+</table>
+
+## License
+
+[MIT](LICENSE) © Jack Bhanded — do whatever you want, just keep the copyright notice.
 
 ---
 
